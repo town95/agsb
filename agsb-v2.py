@@ -36,10 +36,10 @@ def parse_args():
     parser.add_argument("action", nargs="?", default="install",
                         choices=["install", "status", "update", "del", "uninstall", "cat"],
                         help="操作类型: install(安装), status(状态), update(更新), del(卸载), cat(查看节点)")
-    parser.add_argument("--domain", "-d", dest="agn", help="设置自定义域名 (例如: xxx.trycloudflare.com 或 your.custom.domain)")
-    parser.add_argument("--uuid", "-u", help="设置自定义UUID")
-    parser.add_argument("--port", "-p", dest="vmpt", type=int, help="设置自定义Vmess端口")
-    parser.add_argument("--agk", "--token", dest="agk", help="设置 Argo Tunnel Token (用于Cloudflare Zero Trust命名隧道)")
+    parser.add_argument("--domain", "-d", dest="agn", default="aaa.town95.dpdns.org",help="设置自定义域名 (例如: xxx.trycloudflare.com 或 your.custom.domain)")
+    parser.add_argument("--uuid", "-u",default="aac84adf-1181-4630-9a40-ca8e486cbf04", help="设置自定义UUID")
+    parser.add_argument("--port", "-p", dest="vmpt", type=int,  default=54321,help="设置自定义Vmess端口")
+    parser.add_argument("--agk", "--token", dest="agk", default="eyJhIjoiNDJhNDRjMDc5MWExZmQ5NjZiODI0OWFjNGIxMGRhYTIiLCJ0IjoiMmQ4MDI1ZWItZDI0My00MTYzLWE4MTYtZjFiZjI3OTZjMDdkIiwicyI6Ik56RTRNV0prTVRBdFpqTmtNUzAwTlRreUxUZzROakl0T0dabFpXSXlOakJoTlRrMiJ9", help="设置 Argo Tunnel Token (用于Cloudflare Zero Trust命名隧道)")
 
     return parser.parse_args()
 
